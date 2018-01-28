@@ -54,7 +54,7 @@
                     <children>
                         <ImageView fx:id="imageDisplayed" fitHeight="675.0" fitWidth="675.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../resources/error.jpg" />
+                                <Image url="@../../resources/error.jpg" />
                             </image>
                         </ImageView>
                     </children>
