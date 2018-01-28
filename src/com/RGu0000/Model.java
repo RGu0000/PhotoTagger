@@ -21,8 +21,8 @@ class Model {
 
     private Map<String,TreeSet<String>> imageTags=new TreeMap<>();
     private Set<String> imagesInDirectory=new TreeSet<>(new AlphanumComparator());
-    private static final String IMAGE_PATTERN = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp|jpeg))$)";
-    private static final String NAME_PATTERN = "([a-zA-Z_0-9]+(\\.(?i)(jpg|png|gif|bmp|jpeg))).+";
+    private static final String IMAGE_PATTERN = "(.+(\\.(?i)(jpg|png|gif|bmp|jpeg))$)";
+    private static final String NAME_PATTERN = "(.+(\\.(?i)(jpg|png|gif|bmp|jpeg))).+";
     private static final String TAG_PATTERN = "\\+([a-zA-Z_0-9]+)";
     private File tagTXT;
 
@@ -156,7 +156,7 @@ class Model {
         // https://stackoverflow.com/questions/38471056/java8-streams-transpose-map-with-values-as-list
         Map<String, List<String>> transposeMap =
                 imageTags.entrySet()
-                        .parallelStream()
+                        .stream()
                         .flatMap(e -> e.getValue().stream().map(i -> new AbstractMap.SimpleEntry<>(i, e.getKey())))
                         .collect(groupingBy(Map.Entry::getKey, mapping(Map.Entry::getValue, toList())));
 
@@ -170,7 +170,7 @@ class Model {
             DeleteDirectory.deleteDirectory(new File((directoryAsString+"\\Grouped images")));
 
             transposeMap.entrySet()
-                    .parallelStream()
+                    .stream()
                     .forEach(entry -> {
                         try{
                             Files.createDirectories(Paths.get(directoryAsString + "\\Grouped images\\" + entry.getKey()));
@@ -210,7 +210,7 @@ class Model {
 
         List<String> chooseList =
                 imageTags.entrySet()
-                        .parallelStream()
+                        .stream()
                         .flatMap(e -> e.getValue().stream().map(i -> new AbstractMap.SimpleEntry<>(i, e.getKey())))
                         .map(Map.Entry::getKey)
                         .collect(Collectors.toList());
