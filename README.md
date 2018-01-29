@@ -25,12 +25,21 @@ Few features were found online (I have put a source of downloaded features in th
 <p align="center">
   <b>Screenshots:</b> <br> <br>
 <img align="center" src=https://user-images.githubusercontent.com/35892799/35527974-b897fba2-052c-11e8-9e3b-d61f035a5c87.JPG height=500>
+ Application's main window
  </p>
 <br>
 <p align="center">
 <img src=https://user-images.githubusercontent.com/35892799/35527979-b9a58230-052c-11e8-82eb-57dc2e91299b.JPG height=500>
- </p>
+Application's main window
+</p>
 <br>
 <p align="center">
-<img src=https://user-images.githubusercontent.com/35892799/35527983-bacc0c60-052c-11e8-9241-e859bf6e5e17.jpg height=500>
+<img src=https://user-images.githubusercontent.com/35892799/35527983-bacc0c60-052c-11e8-9241-e859bf6e5e17.jpg height=500><br>
+  Export 1 tag - example
+ </p><br>
+ <p align="center">
+<img src=https://user-images.githubusercontent.com/35892799/35536814-43664728-0548-11e8-9e03-e884da743d93.JPG height=250><br>
+  Hidden txt file storing previously added tags.
  </p>
+ 
+ 
